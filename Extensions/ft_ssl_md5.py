@@ -1,6 +1,6 @@
 # ================================================== #
 #
-#   GRUT Project Extension
+#   GRUT Extension
 #
 #   Project: ft_ssl_md5
 #   Author:  akharrou

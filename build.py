@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    grutbuilder.py                                     :+:      :+:    :+:    #
+#    build.py                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: akharrou <akharrou@student.42.us.org>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/15 12:20:23 by akharrou          #+#    #+#              #
-#    Updated: 2019/05/15 12:46:13 by akharrou         ###   ########.fr        #
+#    Updated: 2019/05/15 13:25:55 by akharrou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,19 +17,22 @@ UNDELRINED = '\033[4m'
 
 try:
 
-	GRUT           = f'grut.txt'
-	EXTENSION      = sys.argv[1]
-	GRUT_EXTENSION = f'grut-{EXTENSION}.py'
+	GRUT              = f'grut.template'
+	EXTENSION         = sys.argv[1]
+	EXTENSION_FOLDER  = 'extensions'
+	GRUT_EXTENSION    = f'grut-{EXTENSION}.py'
 
 	with open(GRUT, 'r') as fd_grut:
-		with open(GRUT_EXTENSION, 'w') as fd_extension:
+		with open(f'{EXTENSION_FOLDER}/{EXTENSION}.py', 'r') as fd_extension:
+			with open(GRUT_EXTENSION, 'w') as fd_out:
 
-			grut = str(fd_grut.read())
-			grut = grut.replace('$__________', EXTENSION)
+				grut = fd_grut.read()
+				grut = grut.replace('$__________', EXTENSION)
 
-			grut = grut.replace('import sys', f'import sys\nimport {EXTENSION}')
+				extension_body = fd_extension.read()
+				grut = grut.replace('$GRUTEXTENSION$', extension_body)
 
-			fd_extension.write(grut)
+				fd_out.write(grut)
 
 except Exception:
-	print(f'usage: grutBuilder {UNDELRINED}project_name{DEFAULT}')
+	print(f'usage: python3 build {UNDELRINED}42_project_name{DEFAULT}')

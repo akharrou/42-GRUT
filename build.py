@@ -6,7 +6,7 @@
 #    By: akharrou <akharrou@student.42.us.org>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/15 12:20:23 by akharrou          #+#    #+#              #
-#    Updated: 2019/05/15 13:51:34 by akharrou         ###   ########.fr        #
+#    Updated: 2019/05/15 15:02:05 by akharrou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,13 +26,13 @@ try:
 		sys.exit(1)
 
 	if (os.getcwd().find('42-GRUT') == -1):
-		PREFIX = f'{os.getcwd()}/42-GRUT/'
+		PREFIX = f'{os.getcwd()}/42-GRUT'
 	else:
 		PREFIX = ''
 
 	GRUT              = f'{PREFIX}/grut.template'
 	EXTENSION         = sys.argv[1]
-	EXTENSION_FOLDER  = 'extensions'
+	EXTENSION_FOLDER  = 'Extensions'
 	GRUT_EXTENSION    = f'grut-{EXTENSION}.py'
 
 	with open(GRUT, 'r') as fd_grut:

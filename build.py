@@ -6,7 +6,7 @@
 #    By: akharrou <akharrou@student.42.us.org>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/15 12:20:23 by akharrou          #+#    #+#              #
-#    Updated: 2019/05/15 18:50:24 by akharrou         ###   ########.fr        #
+#    Updated: 2019/05/15 19:18:23 by akharrou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,18 +37,18 @@ try:
 		print(f'usage: python3 build {UNDELRINED}42_project_name{DEFAULT}')
 		sys.exit(1)
 
-	if (os.getcwd().find('42-GRUT') == -1):
-		PREFIX = f'{os.getcwd()}/42-GRUT'
+	if (os.path.basename(os.getcwd()) == '42-GRUT'):
+		PATH_42GRUT = f'{os.getcwd()}/'
 	else:
-		PREFIX = ''
+		PATH_42GRUT = f'{os.getcwd()}/42-GRUT/'
 
-	GRUT              = f'{PREFIX}/grut.template'
+	GRUT              = f'{PATH_42GRUT}grut.template'
 	EXTENSION         = sys.argv[1]
-	EXTENSION_FOLDER  = 'Extensions'
-	GRUT_EXTENSION    = f'grut-{EXTENSION}.py'
+	EXTENSION_FOLDER  = f'{PATH_42GRUT}Extensions/'
+	GRUT_EXTENSION    = f'{PATH_42GRUT}../grut-{EXTENSION}.py'
 
 	with open(GRUT, 'r') as fd_grut:
-		with open(f'{PREFIX}/{EXTENSION_FOLDER}/{EXTENSION}.py', 'r') as fd_extension:
+		with open(f'{EXTENSION_FOLDER}{EXTENSION}.py', 'r') as fd_extension:
 			with open(GRUT_EXTENSION, 'w') as fd_out:
 
 				grut = fd_grut.read()
@@ -59,12 +59,14 @@ try:
 
 				fd_out.write(grut)
 
-	print(f'\n"{UNDELRINED}{ITALTIC}{GRUT_EXTENSION}{DEFAULT}" has successfully been built in your directory.')
+	print(f'\n"{UNDELRINED}{ITALTIC}grut-{EXTENSION}.py{DEFAULT}" has successfully been built in your project\'s root directory.')
 	print(f'\nTo get started, run:')
-	print(f'\n     MANUAL:   {UNDELRINED}python3 {GRUT_EXTENSION} --manual{DEFAULT}')
-	print(f'\n     USAGE:    {UNDELRINED}python3 {GRUT_EXTENSION} --help{DEFAULT}\n')
+	print(f'\n     MANUAL:   {UNDELRINED}python3 grut-{EXTENSION}.py --manual{DEFAULT}')
+	print(f'\n     USAGE:    {UNDELRINED}python3 grut-{EXTENSION}.py --help{DEFAULT}\n')
 	print(('                             or'))
-	print(f'\n     USAGE EXAMPLE:  python3 {GRUT_EXTENSION} {UNDELRINED}input_arguments ...{DEFAULT}\n')
+	print(f'\n     USAGE EXAMPLE:  python3 grut-{EXTENSION}.py {UNDELRINED}input_arguments ...{DEFAULT}\n')
+
+	# os.rmdir('.')
 
 except Exception as e:
 	print(f' {f"—" * 90}\n')

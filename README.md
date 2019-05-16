@@ -4,17 +4,17 @@
 
 ## Install & Use
 
-  * Download `GRUT`
+  1)  Download `GRUT`
 ```bash
   git clone https://github.com/akharrou/42-GRUT
 ```
 
-  * Build your Project Specific Unit-Tester
+  2) Build your Project Specific Unit-Tester
 ```bash
   python3 42-GRUT/build.py <name of your 42 project>
 ```
 
-  * Run it
+  3) Run it
 ```bash
   python3 grut-<project>.py <project's input arguments>
 ```

@@ -1,3 +1,5 @@
+	BAR_LEN  = 197
+
 	FILE_A='__output_A__'
 	FILE_B='__output_B__'
 

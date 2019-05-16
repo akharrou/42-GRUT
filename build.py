@@ -6,7 +6,7 @@
 #    By: akharrou <akharrou@student.42.us.org>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/15 12:20:23 by akharrou          #+#    #+#              #
-#    Updated: 2019/05/15 19:18:23 by akharrou         ###   ########.fr        #
+#    Updated: 2019/05/15 19:20:10 by akharrou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,7 +66,8 @@ try:
 	print(('                             or'))
 	print(f'\n     USAGE EXAMPLE:  python3 grut-{EXTENSION}.py {UNDELRINED}input_arguments ...{DEFAULT}\n')
 
-	# os.rmdir('.')
+	print(PATH_42GRUT)
+	# os.rmdir(f'{PATH_42GRUT}')
 
 except Exception as e:
 	print(f' {f"—" * 90}\n')

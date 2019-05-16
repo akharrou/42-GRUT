@@ -3,7 +3,7 @@
 
 
 ## Install & Use
-----
+
 #### 1)  Download `GRUT`
 ```bash
   git clone https://github.com/akharrou/42-GRUT

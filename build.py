@@ -6,7 +6,7 @@
 #    By: akharrou <akharrou@student.42.us.org>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/15 12:20:23 by akharrou          #+#    #+#              #
-#    Updated: 2019/05/15 19:20:10 by akharrou         ###   ########.fr        #
+#    Updated: 2019/05/16 10:06:49 by akharrou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,7 +69,7 @@ try:
 except Exception as e:
 	print(f' {f"—" * 90}\n')
 	print(f'{RED_BACKGROUND}{YELLOW}💣  G.R.U.T BUILD CRASHED 💣{DEFAULT}\n')
-	print(f'{UNDELRINED}\n🚨  Please Report the Issue ! 🚨{DEFAULT}  :: G.R.U.T -- © 2019 {UNDELRINED}kmira{DEFAULT} & {UNDELRINED}akharrou{DEFAULT} 😓')
-	print(f'{DEFAULT}Copy paste the following and {YELLOW}report or dm{DEFAULT} us @akharrou / @kmira the issue\n\n')
+	print(f'{UNDELRINED}\n🚨  Please Report the Issue ! 🚨{DEFAULT}  :: 42 G.R.U.T -- © 2019')
+	print(f'{DEFAULT}Copy paste the following and {YELLOW}report or dm{DEFAULT} @akharrou or @kmira the issue\n\n')
 	print(f'{UNDELRINED}GRUT BUILD ISSUE:\n{DEFAULT}{RED_BACKGROUND}{ITALTIC}')
 	raise e

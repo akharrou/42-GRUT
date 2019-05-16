@@ -66,9 +66,6 @@ try:
 	print(('                             or'))
 	print(f'\n     USAGE EXAMPLE:  python3 grut-{EXTENSION}.py {UNDELRINED}input_arguments ...{DEFAULT}\n')
 
-	print(PATH_42GRUT)
-	# os.rmdir(f'{PATH_42GRUT}')
-
 except Exception as e:
 	print(f' {f"—" * 90}\n')
 	print(f'{RED_BACKGROUND}{YELLOW}💣  G.R.U.T BUILD CRASHED 💣{DEFAULT}\n')

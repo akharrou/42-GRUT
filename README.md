@@ -27,3 +27,11 @@ Example:
    python3 grut-fillit.py sample_tetrominos_1 sample_tetrominos_2 sample_tetrominos_3
 ```
 ----
+
+
+## Supported Projects
+
+Currently only supports the following projects, although more are on their way !
+
+  * fillit
+  * ft_ssl_md5

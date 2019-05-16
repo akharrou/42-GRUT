@@ -6,7 +6,7 @@
 #    By: akharrou <akharrou@student.42.us.org>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/14 09:55:22 by akharrou          #+#    #+#              #
-#    Updated: 2019/05/16 09:56:13 by akharrou         ###   ########.fr        #
+#    Updated: 2019/05/16 09:56:58 by akharrou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -134,6 +134,6 @@ except Exception as e:
 	print(f' {f"—" * (BAR_LEN)}\n')
 	print(f'{RED_BACKGROUND}{YELLOW}💣  G.R.U.T CRASHED 💣{DEFAULT}\n')
 	print(f'{UNDELRINED}\n🚨  Please Report the Issue ! 🚨{DEFAULT}')
-	print(f'{DEFAULT}Copy paste the following and {YELLOW}report or dm{DEFAULT} us @akharrou / @kmira the issue\n\n')
+	print(f'{DEFAULT}Copy paste the following and {YELLOW}report or dm{DEFAULT} @akharrou or @kmira the issue\n\n')
 	print(f'{UNDELRINED}GRUT ISSUE:\n{DEFAULT}{RED_BACKGROUND}{ITALTIC}')
 	raise e

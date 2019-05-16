@@ -13,8 +13,16 @@
 ```bash
   python3 42-GRUT/build.py <name of your 42 project>
 ```
+Example:
+```
+   python3 42-GRUT/build.py fillit
+```
 
   3) Run it (example)
 ```bash
-  python3 grut-fillit.py sample_tetrominos_1 sample_tetrominos_2 sample_tetrominos_3
+  python3 grut-<project>.py <project's input> ...
+```
+Example:
+```
+   python3 grut-fillit.py sample_tetrominos_1 sample_tetrominos_2 sample_tetrominos_3
 ```

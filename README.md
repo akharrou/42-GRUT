@@ -1,5 +1,5 @@
 # 42-GRUT
-42 Generalized Unit-Tester. Making unit-testing less of a hassle.
+42 Generalized Rambo Unit-Tester. Making unit-testing less of a hassle.
 
 
 ## Install & Use

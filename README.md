@@ -14,7 +14,7 @@
   python3 42-GRUT/build.py <name of your 42 project>
 ```
 
-  3) Run it
+  3) Run it (example)
 ```bash
-  python3 grut-<project>.py <project's input arguments>
+  python3 grut-fillit.py sample_tetrominos_1 sample_tetrominos_2 sample_tetrominos_3
 ```

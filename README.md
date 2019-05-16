@@ -4,7 +4,7 @@
 
 ## Install & Use
 
-#### 1)  Download `GRUT`
+#### 1)  Download `GRUT` in your Project's Root Directory
 ```bash
   git clone https://github.com/akharrou/42-GRUT
 ```

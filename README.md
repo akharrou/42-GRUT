@@ -4,7 +4,7 @@
 
 ## Install & Use
 
-#### 1)  Download `42-GRUT` in your Home Directory
+#### 1)  Download `42-GRUT` in your Home Directory `~/`
 ```bash
   git clone https://github.com/akharrou/42-GRUT.git ~/42-GRUT
 ```

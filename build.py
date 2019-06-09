@@ -6,7 +6,7 @@
 #    By: akharrou <akharrou@student.42.us.org>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/15 12:20:23 by akharrou          #+#    #+#              #
-#    Updated: 2019/06/09 15:10:45 by akharrou         ###   ########.fr        #
+#    Updated: 2019/06/09 15:15:35 by akharrou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ try:
 	PATH_42GRUT       = f'{HOME}/42-GRUT'
 	GRUT_TEMPLATE     = f'{PATH_42GRUT}/grut.template'
 	EXTENSION_FOLDER  = f'{PATH_42GRUT}/Extensions/'
-	GRUT_EXTENSION    = f'{EXTENSION_FOLDER}/grut-{EXTENSION}.py'
+	GRUT_EXTENSION    = f'{PATH_42GRUT}/{EXTENSION}_unittester.py'
 
 	with open(GRUT_TEMPLATE, 'r') as fd_grut:
 		with open(f'{EXTENSION_FOLDER}{EXTENSION}.py', 'r') as fd_extension:
@@ -62,7 +62,7 @@ try:
 
 # WELCOME MESSAGE — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — #
 
-	print(f'\n"{UNDELRINED}{ITALTIC}grut-{EXTENSION}.py{DEFAULT}" has successfully been built in your project\'s root directory.')
+	print(f'\n"{UNDELRINED}{ITALTIC}grut-{EXTENSION}.py{DEFAULT}" has successfully been built in your  directory.')
 	print(f'\nTo get started, run:')
 
 	print(f'\n     MANUAL:   {UNDELRINED}python3 grut-{EXTENSION}.py 0 0 --manual{DEFAULT}')
@@ -73,18 +73,18 @@ try:
 	# PROJECT SPECIFIC MESSAGE — — — — — — — — — — — — — — — — — — — — — — — — — — — — #
 
 	if (EXTENSION == 'ft_ls'):
-		print(f'\n     USAGE EXAMPLE:  python3 grut-ft_ls.py {UNDELRINED}"/bin/ls -lR"{DEFAULT} {UNDELRINED}"./ft_ls -lR"{DEFAULT}')
-		print(f'\n     USAGE EXAMPLE:  python3 grut-ft_ls.py {UNDELRINED}"/bin/ls -l -at"{DEFAULT} {UNDELRINED}"./ft_ls -l -at"{DEFAULT} ~/ /var /goinfre ~/Applications ~/Desktop')
-		print(f'\n     USAGE EXAMPLE:  python3 grut-ft_ls.py {UNDELRINED}"/bin/ls -RSip"{DEFAULT} {UNDELRINED}"./ft_ls -RSip"{DEFAULT} -f file_Containing_Input_On_Each_Line\n')
+		print(f'\n     USAGE EXAMPLE:  python3 {GRUT_EXTENSION} {UNDELRINED}"/bin/ls -lR"{DEFAULT} {UNDELRINED}"./ft_ls -lR"{DEFAULT}')
+		print(f'\n     USAGE EXAMPLE:  python3 {GRUT_EXTENSION} {UNDELRINED}"/bin/ls -l -at"{DEFAULT} {UNDELRINED}"./ft_ls -l -at"{DEFAULT} ~/ /var /goinfre ~/Applications ~/Desktop')
+		print(f'\n     USAGE EXAMPLE:  python3 {GRUT_EXTENSION} {UNDELRINED}"/bin/ls -RSip"{DEFAULT} {UNDELRINED}"./ft_ls -RSip"{DEFAULT} -f file_Containing_Input_On_Each_Line\n')
 
 	elif (EXTENSION == 'fillit'):
-		print(f'\n     USAGE EXAMPLE:  python3 grut-ft_fillit.py {UNDELRINED}./fillit_A{DEFAULT} {UNDELRINED}./fillit_B{DEFAULT} testfile_1 testfile_2 testfile_3')
-		print(f'\n     USAGE EXAMPLE:  python3 grut-ft_fillit.py {UNDELRINED}./fillit_A{DEFAULT} {UNDELRINED}./fillit_B{DEFAULT} -f file_Containing_Names_Of_Test_Files_On_Each_Line\n')
+		print(f'\n     USAGE EXAMPLE:  python3 {GRUT_EXTENSION} {UNDELRINED}./fillit_A{DEFAULT} {UNDELRINED}./fillit_B{DEFAULT} testfile_1 testfile_2 testfile_3')
+		print(f'\n     USAGE EXAMPLE:  python3 {GRUT_EXTENSION} {UNDELRINED}./fillit_A{DEFAULT} {UNDELRINED}./fillit_B{DEFAULT} -f file_Containing_Names_Of_Test_Files_On_Each_Line\n')
 
 	elif (EXTENSION == 'ft_ssl_md5'):
-		print(f'\n     USAGE EXAMPLE:  python3 grut-ft_ssl_md5.py {UNDELRINED}md5{DEFAULT} {UNDELRINED}-q{DEFAULT} {UNDELRINED}./ft_ssl{DEFAULT} {UNDELRINED}md5 -q{DEFAULT} testfile_1 testfile_2 testfile_3\n')
-		print(f'\n     USAGE EXAMPLE:  python3 grut-ft_ssl_md5.py {UNDELRINED}openssl{DEFAULT} {UNDELRINED}sha256{DEFAULT} {UNDELRINED}./ft_ssl{DEFAULT} {UNDELRINED}sha256{DEFAULT} file1 file2 file3\n')
-		print(f'\n     USAGE EXAMPLE:  python3 grut-ft_ssl_md5.py {UNDELRINED}openssl{DEFAULT} {UNDELRINED}sha512 <<<{DEFAULT} {UNDELRINED}./ft_ssl{DEFAULT} {UNDELRINED}sha512 <<<{DEFAULT} file1 file2 file3\n')
+		print(f'\n     USAGE EXAMPLE:  python3 {GRUT_EXTENSION} {UNDELRINED}md5{DEFAULT} {UNDELRINED}-q{DEFAULT} {UNDELRINED}./ft_ssl{DEFAULT} {UNDELRINED}md5 -q{DEFAULT} testfile_1 testfile_2 testfile_3\n')
+		print(f'\n     USAGE EXAMPLE:  python3 {GRUT_EXTENSION} {UNDELRINED}openssl{DEFAULT} {UNDELRINED}sha256{DEFAULT} {UNDELRINED}./ft_ssl{DEFAULT} {UNDELRINED}sha256{DEFAULT} file1 file2 file3\n')
+		print(f'\n     USAGE EXAMPLE:  python3 {GRUT_EXTENSION} {UNDELRINED}openssl{DEFAULT} {UNDELRINED}sha512 <<<{DEFAULT} {UNDELRINED}./ft_ssl{DEFAULT} {UNDELRINED}sha512 <<<{DEFAULT} file1 file2 file3\n')
 
 # ERROR CATCHING — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — #
 

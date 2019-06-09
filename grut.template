@@ -6,7 +6,7 @@
 #    By: akharrou <akharrou@student.42.us.org>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/14 09:55:22 by akharrou          #+#    #+#              #
-#    Updated: 2019/05/16 10:07:17 by akharrou         ###   ########.fr        #
+#    Updated: 2019/06/09 14:55:11 by akharrou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ $GRUTEXTENSION$
 	# USAGE & MANUAL — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — #
 
 	def usage():
-		print(f'usage: python3 {FILENAME} [-f {UNDELRINED}file{DEFAULT} ... | {UNDELRINED}input_argument{DEFAULT} ...]')
+		print(f'usage: python3 {FILENAME} {UNDELRINED}Program_A Launch Command{DEFAULT} {UNDELRINED}Program_B Launch Command{DEFAULT} [ {UNDELRINED}--help{DEFAULT} | {UNDELRINED}--manual{DEFAULT} | -d {UNDELRINED}directory(ies){DEFAULT} ... | -f {UNDELRINED}file(s){DEFAULT} ... | {UNDELRINED}input_argument(s){DEFAULT} ... ]')
 		sys.exit(1)
 
 	def manual():
@@ -53,30 +53,35 @@ $GRUTEXTENSION$
 
 	# FLAG HANDLING — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — #
 
-	if (len(sys.argv) < 2        or
-		sys.argv[1] == '-h'      or
-		sys.argv[1] == '--help'  or
-		sys.argv[1] == ''):
+	# '--help' Flag :
+
+	if (  len(sys.argv) < 4            or
+		  sys.argv[3] == '-h'          or
+		  sys.argv[3] == '--help'      or
+		  sys.argv[3] == ''                 ):
 
 		usage()
 
-	elif (sys.argv[1] == '-m'        or
-		sys.argv[1] == '-man'      or
-		sys.argv[1] == '-manual'   or
-		sys.argv[1] == '--manual'):
+	# '--manual' Flag :
+
+	elif (  sys.argv[3] == '-m'        or
+		    sys.argv[3] == '-man'      or
+		    sys.argv[3] == '-manual'   or
+		    sys.argv[3] == '--manual'      ):
 
 		manual()
 
-	elif (sys.argv[1] == '-f'):
+	# '-f' Flag :
 
-		if (len(sys.argv[2:]) < 1):
+	elif (sys.argv[3] == '-f'):
+
+		if (len(sys.argv[4:]) < 1):
 			usage()
 
 		try:
 
 			arguments = []
-			sys.argv = sys.argv[2:]
-			for argsFile in sys.argv:
+			for argsFile in sys.argv[4:]:
 
 				try:
 
@@ -84,31 +89,65 @@ $GRUTEXTENSION$
 						arguments.extend(fd.readlines())
 
 				except Exception:
-					print('Invalid Input File')
+					print(f'{argsFile}: Invalid Input File')
+					sys.exit(1)
 
 		except Exception as e:
 			usage()
 
+	# '-d' Flag :
+
+	elif (sys.argv[3] == '-d'):
+
+		if (len(sys.argv[4:]) < 1):
+			usage()
+
+		try:
+
+			arguments = []
+
+			for dir in sys.argv[4:]:
+
+				try:
+
+					for dirfile in os.listdir(dir):
+
+						try:
+
+							dirfile = f'./{dir}/{dirfile}'
+
+							if os.path.isfile(dirfile) == True:
+								with open(dirfile, 'r') as fd:
+									arguments.extend(fd.readlines())
+
+						except Exception:
+							print(f'{dirfile}: Invalid Input File')
+							sys.exit(1)
+
+				except Exception:
+					print(f'{dir}: Invalid Directory')
+					sys.exit(1)
+
+		except Exception as e:
+			usage()
+
+	# No Flag :
+
 	else:
-		arguments = sys.argv[1:]
+		arguments = sys.argv[3:]
 
-	# # DYNAMIC INPUT — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — #
-
-	try:
-		launch_command_programA = os.environ["LAUNCH_PROGRAM_A"]
-	except Exception:
-		launch_command_programA = str(input("[LAUNCH COMMAND -- Program_A] (w/out arguments): "))
-		print(f"\nSet variable:\nexport LAUNCH_PROGRAM_A='{launch_command_programA}'")
-		print('\n')
+	# DYNAMIC INPUT — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — #
 
 	try:
-		launch_command_programB = os.environ["LAUNCH_PROGRAM_B"]
-	except Exception:
-		launch_command_programB = str(input("[LAUNCH COMMAND -- Program_B] (w/out arguments): "))
-		print(f"\nSet variable:\nexport LAUNCH_PROGRAM_B='{launch_command_programB}'")
-		print('\n')
 
-	# # HEADER — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — #
+		launch_command_programA = sys.argv[1]
+		launch_command_programB = sys.argv[2]
+
+	except NameError as err:
+		print(f'\nMissing Programs')
+		sys.exit(1)
+
+	# HEADER — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — #
 
 	print(f'{STRIPS}{f"=" * (BAR_LEN + 2)}')
 	print(f'|{DEFAULT}{BACKGROUND}{f" " * (BAR_LEN)}{DEFAULT}{STRIPS}|')
@@ -123,9 +162,15 @@ $GRUTEXTENSION$
 
 	# BODY — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — #
 
-	GRUTBody__$__________(launch_command_programA, launch_command_programB)
+	try:
 
-# 	# FOOTER — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — #
+		GRUTBody__ft_ls(launch_command_programA, launch_command_programB)
+
+	except KeyboardInterrupt:
+		print(f'{UNDELRINED}\n\n🚨  You abruptly quit ! 🚨{DEFAULT}')
+		sys.exit(1)
+
+	# FOOTER — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — #
 
 	print(f'️\n{UNDELRINED}Share if you found it useful !{DEFAULT} :: 42 G.R.U.T -- © 2019')
 	print('')
@@ -133,7 +178,7 @@ $GRUTEXTENSION$
 except Exception as e:
 	print(f' {f"—" * (BAR_LEN)}\n')
 	print(f'{RED_BACKGROUND}{YELLOW}💣  G.R.U.T CRASHED 💣{DEFAULT}\n')
-	print(f'{UNDELRINED}\n🚨  Please Report the Issue ! 🚨{DEFAULT}  :: 42 G.R.U.T -- © 2019')
+	print(f'{UNDELRINED}\n🚨  Please Check Your Input  |OR|  Report the Issue ! 🚨{DEFAULT}  :: 42 G.R.U.T -- © 2019')
 	print(f'{DEFAULT}Copy paste the following and {YELLOW}report or dm{DEFAULT} @akharrou or @kmira the issue\n\n')
 	print(f'{UNDELRINED}GRUT ISSUE:\n{DEFAULT}{RED_BACKGROUND}{ITALTIC}')
 	raise e

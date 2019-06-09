@@ -6,12 +6,13 @@
 #    By: akharrou <akharrou@student.42.us.org>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/15 12:20:23 by akharrou          #+#    #+#              #
-#    Updated: 2019/05/16 10:06:49 by akharrou         ###   ########.fr        #
+#    Updated: 2019/06/09 14:58:03 by akharrou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 import os
 import sys
+import pathlib
 
 # COLORIZATION — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — #
 
@@ -32,6 +33,8 @@ GREEN_BACKGROUND  = '\033[42m'
 # SCRIPT — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — #
 
 try:
+
+	home = str(pathlib.Path.home()) + '/'
 
 	if (len(sys.argv) != 2):
 		print(f'usage: python3 build {UNDELRINED}42_project_name{DEFAULT}')
@@ -59,12 +62,36 @@ try:
 
 				fd_out.write(grut)
 
+# WELCOME MESSAGE — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — #
+
 	print(f'\n"{UNDELRINED}{ITALTIC}grut-{EXTENSION}.py{DEFAULT}" has successfully been built in your project\'s root directory.')
 	print(f'\nTo get started, run:')
-	print(f'\n     MANUAL:   {UNDELRINED}python3 grut-{EXTENSION}.py --manual{DEFAULT}')
-	print(f'\n     USAGE:    {UNDELRINED}python3 grut-{EXTENSION}.py --help{DEFAULT}\n')
+
+	print(f'\n     MANUAL:   {UNDELRINED}python3 grut-{EXTENSION}.py 0 0 --manual{DEFAULT}')
+	print(f'\n     USAGE:    {UNDELRINED}python3 grut-{EXTENSION}.py 0 0 --help{DEFAULT}\n')
+
 	print(('                             or'))
-	print(f'\n     USAGE EXAMPLE:  python3 grut-{EXTENSION}.py {UNDELRINED}input_arguments ...{DEFAULT}\n')
+
+	# PROJECT SPECIFIC MESSAGE — — — — — — — — — — — — — — — — — — — — — — — — — — — — #
+
+	if (EXTENSION == 'ft_ls'):
+		print(f'\n     USAGE EXAMPLE:  python3 grut-ft_ls.py {UNDELRINED}"/bin/ls -lR"{DEFAULT} {UNDELRINED}"./ft_ls -lR"{DEFAULT}')
+		print(f'\n     USAGE EXAMPLE:  python3 grut-ft_ls.py {UNDELRINED}"/bin/ls -l -at"{DEFAULT} {UNDELRINED}"./ft_ls -l -at"{DEFAULT} ~/ /var /goinfre ~/Applications ~/Desktop')
+		print(f'\n     USAGE EXAMPLE:  python3 grut-ft_ls.py {UNDELRINED}"/bin/ls -RSip"{DEFAULT} {UNDELRINED}"./ft_ls -RSip"{DEFAULT} -f file_Containing_Input_On_Each_Line\n')
+
+	elif (EXTENSION == 'fillit'):
+		print(f'\n     USAGE EXAMPLE:  python3 grut-ft_fillit.py {UNDELRINED}./fillit_A{DEFAULT} {UNDELRINED}./fillit_B{DEFAULT} testfile_1 testfile_2 testfile_3')
+		print(f'\n     USAGE EXAMPLE:  python3 grut-ft_fillit.py {UNDELRINED}./fillit_A{DEFAULT} {UNDELRINED}./fillit_B{DEFAULT} -f file_Containing_Names_Of_Test_Files_On_Each_Line\n')
+
+	elif (EXTENSION == 'ft_ssl_md5'):
+		print(f'\n     USAGE EXAMPLE:  python3 grut-ft_ssl_md5.py {UNDELRINED}md5{DEFAULT} {UNDELRINED}-q{DEFAULT} {UNDELRINED}./ft_ssl{DEFAULT} {UNDELRINED}md5 -q{DEFAULT} testfile_1 testfile_2 testfile_3\n')
+		print(f'\n     USAGE EXAMPLE:  python3 grut-ft_ssl_md5.py {UNDELRINED}openssl{DEFAULT} {UNDELRINED}sha256{DEFAULT} {UNDELRINED}./ft_ssl{DEFAULT} {UNDELRINED}sha256{DEFAULT} file1 file2 file3\n')
+		print(f'\n     USAGE EXAMPLE:  python3 grut-ft_ssl_md5.py {UNDELRINED}openssl{DEFAULT} {UNDELRINED}sha512 <<<{DEFAULT} {UNDELRINED}./ft_ssl{DEFAULT} {UNDELRINED}sha512 <<<{DEFAULT} file1 file2 file3\n')
+
+# ERROR CATCHING — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — #
+
+except FileNotFoundError as e:
+	print(f'{UNDELRINED}{EXTENSION}{DEFAULT}: Wrong Project Name 🤔  ?\nTry Again 😀')
 
 except Exception as e:
 	print(f' {f"—" * 90}\n')

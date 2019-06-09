@@ -6,7 +6,7 @@
 #    By: akharrou <akharrou@student.42.us.org>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/15 12:20:23 by akharrou          #+#    #+#              #
-#    Updated: 2019/06/09 14:58:03 by akharrou         ###   ########.fr        #
+#    Updated: 2019/06/09 15:07:11 by akharrou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,23 +34,21 @@ GREEN_BACKGROUND  = '\033[42m'
 
 try:
 
-	home = str(pathlib.Path.home()) + '/'
+	HOME = str(pathlib.Path.home())
 
 	if (len(sys.argv) != 2):
 		print(f'usage: python3 build {UNDELRINED}42_project_name{DEFAULT}')
 		sys.exit(1)
 
-	if (os.path.basename(os.getcwd()) == '42-GRUT'):
-		PATH_42GRUT = f'{os.getcwd()}/'
-	else:
-		PATH_42GRUT = f'{os.getcwd()}/42-GRUT/'
 
-	GRUT              = f'{PATH_42GRUT}grut.template'
 	EXTENSION         = sys.argv[1]
-	EXTENSION_FOLDER  = f'{PATH_42GRUT}Extensions/'
-	GRUT_EXTENSION    = f'{PATH_42GRUT}../grut-{EXTENSION}.py'
 
-	with open(GRUT, 'r') as fd_grut:
+	PATH_42GRUT       = f'{HOME}/42-GRUT'
+	GRUT_TEMPLATE     = f'{PATH_42GRUT}/grut.template'
+	EXTENSION_FOLDER  = f'{PATH_42GRUT}Extensions/'
+	GRUT_EXTENSION    = f'{HOME}/grut-{EXTENSION}.py'
+
+	with open(GRUT_TEMPLATE, 'r') as fd_grut:
 		with open(f'{EXTENSION_FOLDER}{EXTENSION}.py', 'r') as fd_extension:
 			with open(GRUT_EXTENSION, 'w') as fd_out:
 

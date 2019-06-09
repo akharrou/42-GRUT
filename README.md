@@ -35,7 +35,7 @@ Example:
 
 ## Supported Projects
 
-Currently only supports the following projects, although more are on their way !
+Currently only supports the following projects, although more are on their way ! & Contributions are WELCOME :D !
 
   * fillit
   * ft_ls

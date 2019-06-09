@@ -7,8 +7,9 @@
 #### 1)  Download `42-GRUT` in your Home Directory
 ```bash
   git clone https://github.com/akharrou/42-GRUT.git ~/42-GRUT
+  
+  PS: downloading the directory anywhere other than home and with any other name than '42-GRUT' will cause it to fail.
 ```
-(DO NOT CHANGE THE NAME :/)
 ----
 #### 2) Build your Project Specific Unit-Tester
 ```bash

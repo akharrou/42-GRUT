@@ -6,12 +6,12 @@
 
 #### 1)  Download `GRUT` in your Project's Root Directory
 ```bash
-  git clone https://github.com/akharrou/42-GRUT
+  git clone https://github.com/akharrou/42-GRUT.git ~/42-GRUT
 ```
 ----
 #### 2) Build your Project Specific Unit-Tester
 ```bash
-  python3 42-GRUT/build.py <name of your 42 project>
+  python3 ~/42-GRUT/build.py <name of your 42 project>
 ```
 Example:
 ```

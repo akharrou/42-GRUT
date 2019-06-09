@@ -15,16 +15,20 @@
 ```
 Example:
 ```
-   python3 42-GRUT/build.py fillit
+   python3 ~/42-GRUT/build.py fillit
+   
+                 or
+   
+   python3 ~/42-GRUT/build.py ft_ls
 ```
 ----
 #### 3) Run
 ```bash
-  python3 grut-<project>.py <project's input> ...
+  python3 ~/42-GRUT/<project>_unittester.py ...
 ```
 Example:
 ```
-   python3 grut-fillit.py sample_tetrominos_1 sample_tetrominos_2 sample_tetrominos_3
+   python3 ~/42-GRUT/fillit_unittester.py ./fillit_A ./fillit_B testfile1 testfile2 testfile3
 ```
 ----
 

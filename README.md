@@ -35,7 +35,7 @@ Example:
 ## Having Issues ?
 
 #### 1) Did you change the name of the directory ? from ~/42-GRUT to anything else ?
-#### 2) DM @akharrou on Slack or my lovely friend @kmira
+#### 2) DM: @akharrou or @kmira on Slack
 
 ----
 ## Supported Projects

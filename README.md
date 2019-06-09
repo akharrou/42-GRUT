@@ -34,4 +34,5 @@ Example:
 Currently only supports the following projects, although more are on their way !
 
   * fillit
+  * ft_ls
   * ft_ssl_md5

@@ -6,7 +6,7 @@
 #    By: akharrou <akharrou@student.42.us.org>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/15 12:20:23 by akharrou          #+#    #+#              #
-#    Updated: 2019/06/09 15:23:26 by akharrou         ###   ########.fr        #
+#    Updated: 2019/06/09 15:29:40 by akharrou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,7 @@ try:
 
 # WELCOME MESSAGE — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — #
 
-	print(f'\n"{UNDELRINED}{ITALTIC}{EXTENSION}_unittester.py{DEFAULT}" has been built in your ~/42-GRUT/ directory.')
+	print(f'\n"{UNDELRINED}{ITALTIC}{EXTENSION}_unittester.py{DEFAULT}" has been successfully been built in your ~/42-GRUT directory.')
 	print(f'\nTo get started, run:')
 
 	print(f'\n     MANUAL:   {UNDELRINED}python3 ~/42-GRUT/{EXTENSION}_unittester.py 0 0 --manual{DEFAULT}')

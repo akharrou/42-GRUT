@@ -20,6 +20,10 @@ Example:
                  or
    
    python3 ~/42-GRUT/build.py ft_ls
+   
+                 or
+
+                ...
 ```
 ----
 #### 3) Run

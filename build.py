@@ -6,7 +6,7 @@
 #    By: akharrou <akharrou@student.42.us.org>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/15 12:20:23 by akharrou          #+#    #+#              #
-#    Updated: 2019/06/09 15:07:11 by akharrou         ###   ########.fr        #
+#    Updated: 2019/06/09 15:10:45 by akharrou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,8 +45,8 @@ try:
 
 	PATH_42GRUT       = f'{HOME}/42-GRUT'
 	GRUT_TEMPLATE     = f'{PATH_42GRUT}/grut.template'
-	EXTENSION_FOLDER  = f'{PATH_42GRUT}Extensions/'
-	GRUT_EXTENSION    = f'{HOME}/grut-{EXTENSION}.py'
+	EXTENSION_FOLDER  = f'{PATH_42GRUT}/Extensions/'
+	GRUT_EXTENSION    = f'{EXTENSION_FOLDER}/grut-{EXTENSION}.py'
 
 	with open(GRUT_TEMPLATE, 'r') as fd_grut:
 		with open(f'{EXTENSION_FOLDER}{EXTENSION}.py', 'r') as fd_extension:

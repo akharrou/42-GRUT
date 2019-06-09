@@ -6,7 +6,7 @@
 #    By: akharrou <akharrou@student.42.us.org>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/14 09:55:22 by akharrou          #+#    #+#              #
-#    Updated: 2019/06/09 14:55:11 by akharrou         ###   ########.fr        #
+#    Updated: 2019/06/09 15:26:32 by akharrou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,86 +55,91 @@ $GRUTEXTENSION$
 
 	# '--help' Flag :
 
-	if (  len(sys.argv) < 4            or
-		  sys.argv[3] == '-h'          or
-		  sys.argv[3] == '--help'      or
-		  sys.argv[3] == ''                 ):
+	try:
 
-		usage()
+		if (  len(sys.argv) < 3            or
+			sys.argv[3] == '-h'          or
+			sys.argv[3] == '--help'      or
+			sys.argv[3] == ''                 ):
 
-	# '--manual' Flag :
-
-	elif (  sys.argv[3] == '-m'        or
-		    sys.argv[3] == '-man'      or
-		    sys.argv[3] == '-manual'   or
-		    sys.argv[3] == '--manual'      ):
-
-		manual()
-
-	# '-f' Flag :
-
-	elif (sys.argv[3] == '-f'):
-
-		if (len(sys.argv[4:]) < 1):
 			usage()
 
-		try:
+		# '--manual' Flag :
 
-			arguments = []
-			for argsFile in sys.argv[4:]:
+		elif (  sys.argv[3] == '-m'        or
+				sys.argv[3] == '-man'      or
+				sys.argv[3] == '-manual'   or
+				sys.argv[3] == '--manual'      ):
 
-				try:
+			manual()
 
-					with open(argsFile, 'r') as fd:
-						arguments.extend(fd.readlines())
+		# '-f' Flag :
 
-				except Exception:
-					print(f'{argsFile}: Invalid Input File')
-					sys.exit(1)
+		elif (sys.argv[3] == '-f'):
 
-		except Exception as e:
-			usage()
+			if (len(sys.argv[4:]) < 1):
+				usage()
 
-	# '-d' Flag :
+			try:
 
-	elif (sys.argv[3] == '-d'):
+				arguments = []
+				for argsFile in sys.argv[4:]:
 
-		if (len(sys.argv[4:]) < 1):
-			usage()
+					try:
 
-		try:
+						with open(argsFile, 'r') as fd:
+							arguments.extend(fd.readlines())
 
-			arguments = []
+					except Exception:
+						print(f'{argsFile}: Invalid Input File')
+						sys.exit(1)
 
-			for dir in sys.argv[4:]:
+			except Exception as e:
+				usage()
 
-				try:
+		# '-d' Flag :
 
-					for dirfile in os.listdir(dir):
+		elif (sys.argv[3] == '-d'):
 
-						try:
+			if (len(sys.argv[4:]) < 1):
+				usage()
 
-							dirfile = f'./{dir}/{dirfile}'
+			try:
 
-							if os.path.isfile(dirfile) == True:
-								with open(dirfile, 'r') as fd:
-									arguments.extend(fd.readlines())
+				arguments = []
 
-						except Exception:
-							print(f'{dirfile}: Invalid Input File')
-							sys.exit(1)
+				for dir in sys.argv[4:]:
 
-				except Exception:
-					print(f'{dir}: Invalid Directory')
-					sys.exit(1)
+					try:
 
-		except Exception as e:
-			usage()
+						for dirfile in os.listdir(dir):
 
-	# No Flag :
+							try:
 
-	else:
-		arguments = sys.argv[3:]
+								dirfile = f'./{dir}/{dirfile}'
+
+								if os.path.isfile(dirfile) == True:
+									with open(dirfile, 'r') as fd:
+										arguments.extend(fd.readlines())
+
+							except Exception:
+								print(f'{dirfile}: Invalid Input File')
+								sys.exit(1)
+
+					except Exception:
+						print(f'{dir}: Invalid Directory')
+						sys.exit(1)
+
+			except Exception as e:
+				usage()
+
+		# No Flag :
+
+		else:
+			arguments = sys.argv[3:]
+
+	except IndexError:
+		arguments = ['']
 
 	# DYNAMIC INPUT — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — #
 

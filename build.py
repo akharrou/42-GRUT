@@ -6,7 +6,7 @@
 #    By: akharrou <akharrou@student.42.us.org>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/15 12:20:23 by akharrou          #+#    #+#              #
-#    Updated: 2019/06/09 15:18:42 by akharrou         ###   ########.fr        #
+#    Updated: 2019/06/09 15:23:26 by akharrou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,29 +62,29 @@ try:
 
 # WELCOME MESSAGE — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — #
 
-	print(f'\n"{UNDELRINED}{ITALTIC}~/{EXTENSION}_unittester.py{DEFAULT}" has successfully been built in your ~/42-GRUT directory.')
+	print(f'\n"{UNDELRINED}{ITALTIC}{EXTENSION}_unittester.py{DEFAULT}" has been built in your ~/42-GRUT/ directory.')
 	print(f'\nTo get started, run:')
 
-	print(f'\n     MANUAL:   {UNDELRINED}python3 ~/{EXTENSION}_unittester.py 0 0 --manual{DEFAULT}')
-	print(f'\n     USAGE:    {UNDELRINED}python3 ~/{EXTENSION}_unittester.py 0 0 --help{DEFAULT}\n')
+	print(f'\n     MANUAL:   {UNDELRINED}python3 ~/42-GRUT/{EXTENSION}_unittester.py 0 0 --manual{DEFAULT}')
+	print(f'\n     USAGE:    {UNDELRINED}python3 ~/42-GRUT/{EXTENSION}_unittester.py 0 0 --help{DEFAULT}\n')
 
 	print(('                             or'))
 
 	# PROJECT SPECIFIC MESSAGE — — — — — — — — — — — — — — — — — — — — — — — — — — — — #
 
 	if (EXTENSION == 'ft_ls'):
-		print(f'\n     USAGE EXAMPLE:  python3 ~/{EXTENSION}_unittester.py {UNDELRINED}"/bin/ls -lR"{DEFAULT} {UNDELRINED}"./ft_ls -lR"{DEFAULT}')
-		print(f'\n     USAGE EXAMPLE:  python3 ~/{EXTENSION}_unittester.py {UNDELRINED}"/bin/ls -l -at"{DEFAULT} {UNDELRINED}"./ft_ls -l -at"{DEFAULT} ~/ /var /goinfre ~/Applications ~/Desktop')
-		print(f'\n     USAGE EXAMPLE:  python3 ~/{EXTENSION}_unittester.py {UNDELRINED}"/bin/ls -RSip"{DEFAULT} {UNDELRINED}"./ft_ls -RSip"{DEFAULT} -f file_Containing_Input_On_Each_Line\n')
+		print(f'\n     USAGE EXAMPLE:  python3 ~/42-GRUT/{EXTENSION}_unittester.py {UNDELRINED}"/bin/ls -lR"{DEFAULT} {UNDELRINED}"./ft_ls -lR"{DEFAULT}')
+		print(f'\n     USAGE EXAMPLE:  python3 ~/42-GRUT/{EXTENSION}_unittester.py {UNDELRINED}"/bin/ls -l -at"{DEFAULT} {UNDELRINED}"./ft_ls -l -at"{DEFAULT} ~/ /var /goinfre ~/Applications ~/Desktop')
+		print(f'\n     USAGE EXAMPLE:  python3 ~/42-GRUT/{EXTENSION}_unittester.py {UNDELRINED}"/bin/ls -RSip"{DEFAULT} {UNDELRINED}"./ft_ls -RSip"{DEFAULT} -f file_Containing_Input_On_Each_Line\n')
 
 	elif (EXTENSION == 'fillit'):
-		print(f'\n     USAGE EXAMPLE:  python3 ~/{EXTENSION}_unittester.py {UNDELRINED}./fillit_A{DEFAULT} {UNDELRINED}./fillit_B{DEFAULT} testfile_1 testfile_2 testfile_3')
-		print(f'\n     USAGE EXAMPLE:  python3 ~/{EXTENSION}_unittester.py {UNDELRINED}./fillit_A{DEFAULT} {UNDELRINED}./fillit_B{DEFAULT} -f file_Containing_Names_Of_Test_Files_On_Each_Line\n')
+		print(f'\n     USAGE EXAMPLE:  python3 ~/42-GRUT/{EXTENSION}_unittester.py {UNDELRINED}./fillit_A{DEFAULT} {UNDELRINED}./fillit_B{DEFAULT} testfile_1 testfile_2 testfile_3')
+		print(f'\n     USAGE EXAMPLE:  python3 ~/42-GRUT/{EXTENSION}_unittester.py {UNDELRINED}./fillit_A{DEFAULT} {UNDELRINED}./fillit_B{DEFAULT} -f file_Containing_Names_Of_Test_Files_On_Each_Line\n')
 
 	elif (EXTENSION == 'ft_ssl_md5'):
-		print(f'\n     USAGE EXAMPLE:  python3 ~/{EXTENSION}_unittester.py {UNDELRINED}md5{DEFAULT} {UNDELRINED}-q{DEFAULT} {UNDELRINED}./ft_ssl{DEFAULT} {UNDELRINED}md5 -q{DEFAULT} testfile_1 testfile_2 testfile_3\n')
-		print(f'\n     USAGE EXAMPLE:  python3 ~/{EXTENSION}_unittester.py {UNDELRINED}openssl{DEFAULT} {UNDELRINED}sha256{DEFAULT} {UNDELRINED}./ft_ssl{DEFAULT} {UNDELRINED}sha256{DEFAULT} file1 file2 file3\n')
-		print(f'\n     USAGE EXAMPLE:  python3 ~/{EXTENSION}_unittester.py {UNDELRINED}openssl{DEFAULT} {UNDELRINED}sha512 <<<{DEFAULT} {UNDELRINED}./ft_ssl{DEFAULT} {UNDELRINED}sha512 <<<{DEFAULT} file1 file2 file3\n')
+		print(f'\n     USAGE EXAMPLE:  python3 ~/42-GRUT/{EXTENSION}_unittester.py {UNDELRINED}md5{DEFAULT} {UNDELRINED}-q{DEFAULT} {UNDELRINED}./ft_ssl{DEFAULT} {UNDELRINED}md5 -q{DEFAULT} testfile_1 testfile_2 testfile_3\n')
+		print(f'\n     USAGE EXAMPLE:  python3 ~/42-GRUT/{EXTENSION}_unittester.py {UNDELRINED}openssl{DEFAULT} {UNDELRINED}sha256{DEFAULT} {UNDELRINED}./ft_ssl{DEFAULT} {UNDELRINED}sha256{DEFAULT} file1 file2 file3\n')
+		print(f'\n     USAGE EXAMPLE:  python3 ~/42-GRUT/{EXTENSION}_unittester.py {UNDELRINED}openssl{DEFAULT} {UNDELRINED}sha512 <<<{DEFAULT} {UNDELRINED}./ft_ssl{DEFAULT} {UNDELRINED}sha512 <<<{DEFAULT} file1 file2 file3\n')
 
 # ERROR CATCHING — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — #
 

@@ -37,6 +37,7 @@ Example:
 #### 1) Did you change the name of the directory ? from ~/42-GRUT to anything else ?
 #### 2) DM @akharrou on Slack or my lovely friend @kmira
 
+----
 ## Supported Projects
 
 Currently only supports the following projects, although more are on their way ! & Contributions are WELCOME :D !

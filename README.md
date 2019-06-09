@@ -4,10 +4,11 @@
 
 ## Install & Use
 
-#### 1)  Download `42-GRUT` in your Project's HOME (~/) Directory (DO NOT CHANGE THE NAME :/)
+#### 1)  Download `42-GRUT` in your Home Directory
 ```bash
   git clone https://github.com/akharrou/42-GRUT.git ~/42-GRUT
 ```
+(DO NOT CHANGE THE NAME :/)
 ----
 #### 2) Build your Project Specific Unit-Tester
 ```bash

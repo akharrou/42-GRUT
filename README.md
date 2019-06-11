@@ -38,7 +38,7 @@ Example:
 
 ## Having Issues ?
 
- 1) Did you change the name of the directory ? from `42-GRUT` to anything else ? or move it from `~/` (home) to anything else ?
+ 1) Did you change the name of the directory ? from `42-GRUT` to anything else ? or move it from `~/` (home) to anything else ? If so, then that's probably why.
  2) DM: **@AKharrou** or **@kmira** on Slack
 
 ----

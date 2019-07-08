@@ -53,9 +53,9 @@ $GRUTEXTENSION$
 
 	# FLAG HANDLING — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — #
 
-	# '--help' Flag :
-
 	try:
+
+		# '--help' Flag :
 
 		if (  len(sys.argv) < 3            or
 			sys.argv[3] == '-h'          or
@@ -169,7 +169,7 @@ $GRUTEXTENSION$
 
 	try:
 
-		GRUTBody__ft_ls(launch_command_programA, launch_command_programB)
+		GRUTBody__$__________(launch_command_programA, launch_command_programB)
 
 	except KeyboardInterrupt:
 		print(f'{UNDELRINED}\n\n🚨  You abruptly quit ! 🚨{DEFAULT}')
